@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Workshop Entercode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root{
+            --yellow:#ffd500;
+            --darkBlue:#27263b;
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html body{
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .header{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container{
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+
+        .header ul{
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar{
+            background-color: var(--darkBlue);
+            padding-top: 10px;
+            padding-bottom: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 99;
+        }
+
+        .navbar .nav_menu{
+            display: flex;
+            color: white;
+            gap: 20px;
+            margin-left: auto;
+            margin-right: 0px;
+        }
+
+        .jumbotron{
+            position: relative;
+            height: 570px;
+            display: flex;
+            align-items: center;
+        }
+
+        .jumbotron img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            z-index: -1;
+            filter: brightness(40%);
+        }
+
+        .jumbotron .container .title{
+            font-size: 60px;
+            font-weight: 800;
+            text-transform: uppercase;
+            line-height: 50px;
+        }
+
+        .jumbotron .container .button{
+            display: flex;
+            margin-top: 30px;
+            width: 100%;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .a_button{
+            background-color: var(--yellow);
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 8px;
+        }
+
+        .about .row{
+            display: grid;
+            grid-template-columns: 60% 40%;
+        }
+
+        .chosee{
+            background-color: #f1f4ff;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .chosee .row{
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            margin-top: 40px;
+        }
+
+        .chosee .row .col .flex_icon{
+            display: flex;
+            justify-content: center;
+        }
+
+        .chosee .row .col .border{
+            padding: 20px;
+            border: 20px solid var(--yellow);
+            width: 85px;
+            height: 85px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 100%;
+        }
+
+        .chosee .row .col i{
+            font-size: 50px;
+        }
+
+        .service .row{
+            display: grid;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+            margin-top: 40px;
+        }
+
+        .service .row .col{
+            padding: 15px;
+        }
+
+        .service .row .col img{
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .gallery{
+            background-color:var(--yellow);
+            padding-top: 50px;
+            padding-bottom: 50px;
+            color: white;
+        }
+
+        .gallery .paginator{
+            display: flex;
+            margin-top: 20px;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery .paginator button{
+            background-color: transparent;
+            color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 20px;
+            border: 0px;
+            transition: 0.5s;
+        }
+
+        .gallery .paginator button:hover{
+            background-color: rgb(39, 39, 39);
+        }
+
+        .gallery .paginator button.active{
+            background-color: rgb(39, 39, 39);
+        }
+
+        .gallery .row{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            margin-top: 35px;
+            gap: 10px;
+        }
+
+        .gallery .row-2{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 10px;
+        }
+
+        .display-none{
+            display: none !important;
+        }
+
+        .testimoni .row{
+            display: grid;
+            grid-template-columns: 33.3% 33.3% 33.3%;
+            margin-top: 40px;
+        }
+
+        .testimoni .row .col{
+            padding: 20px;
+        }
+
+        .testimoni .card{
+            background-color: rgb(186, 182, 182);
+            border-radius: 25px;
+            padding: 30px;
+            display: flex;
+        }
+
+        .testimoni .card i{
+            font-size: 40px;
+            opacity: 0.7;
+            margin-top: -20px;
+        }
+
+        .testimoni .prime .card{
+            padding-top: 60px;
+            padding-bottom: 60px;
+            margin-top: -30px;
+            background-color: var(--yellow) !important;
+            color: white;
+        }
+
+        .testimoni .flex-profile{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .testimoni .profile{
+            margin-top: 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+        }
+
+        .testimoni .profile img{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+        }
+
+        .subscribe{
+            background-color: var(--yellow);
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .subscribe .row{
+            display: grid;
+            grid-template-columns: 50% 50%;
+        }
+
+        .subscribe .input1, .subscribe .input2{
+            display: flex;
+            gap: 30px;
+        }
+
+        .subscribe .input1 input{
+            width: 50%;
+            outline: 0;
+            border: none;
+            padding: 10px;
+            border-radius: 10px ;
+        }
+
+        .subscribe .input2{
+            margin-top: 15px;
+        }
+
+        .subscribe .input2 input{
+            width: 70%;
+            outline: 0;
+            border: none;
+            padding: 10px;
+            border-radius: 10px ;
+        }
+
+        .subscribe .input2 button{
+            width: 30%;
+            background-color: rgb(56, 56, 56);
+            border-radius: 10px;
+            border: 0;
+            outline: none;
+        }
+
+        .footer{
+            position: relative;
+            padding-top: 70px;
+            padding-bottom: 70px;
+            color: white;
+        }
+
+        .footer img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            top: 0;
+            z-index: -1;
+            filter: brightness(10%);
+        }
+
+        .footer .row{
+            display: grid;
+            grid-template-columns: 34% 22% 22% 22%;
+        }
+
+        .footer .base_icon{
+            padding: 10px 15px 10px 14px;
+            background-color: var(--yellow);
+            color: black;
+            border-radius: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header class="header" style="background-color: var(--yellow);">
+        <div class="container" style="display: flex;">
+            <ul>
+                <li><i class="bi bi-phone"></i> 0812-3456-7890</li>
+                <li><i class="bi bi-envelope-fill"></i> @example@gmail.com</li>
+                <li><i class="bi bi-clock"></i> 1 November 2023, 08.00</li>
+            </ul>
+            <ul style="margin-left: auto; margin-right: 0px">
+                <li><i class="bi bi-facebook"></i></li>
+                <li><i class="bi bi-twitter"></i></li>
+                <li><i class="bi bi-youtube"></i></li>
+                <li><i class="bi bi-instagram"></i></li>
+            </ul>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container" style="display: flex; align-items: center;">
+            <div>
+                <h3 style="color: var(--yellow); font-size: 28px;">Aminudin Abdulloh</h3>
+                <div style="color: white; margin-top: -7px;">Welcome to my website portofolio</div>
+            </div>
+            <ul class="nav_menu">
+                <li>home</li>
+                <li>page</li>
+                <li>blog</li>
+                <li>portofolio</li>
+                <li>components</li>
+                <li>contact</li>
+                <li><i class="bi bi-search" style="color: var(--yellow);"></i></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron">
+        <img src="jumbotron.jpg" alt="jumbotron">
+        <div class="container" style="width: 100%; text-align: center;">
+            <div style="font-size: 30px; text-align: center; color: white;">Hello!</div>
+            <div style="padding-top: 10px; padding-bottom: 10px;">
+                <b class="title" style="color: white;">I'm Aminudin Abdulloh</b> <br>
+                <b class="title" style="color: var(--yellow);">Backend Engineer</b>
+            </div>
+            <p style="color: white ;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae praesentium beatae pariatur debitis, iure facilis sapiente, ipsa dolore reprehenderit reiciendis voluptatem maxime voluptates eaque tempore illo! Minus omnis sequi perspiciatis numquam distinctio ea, molestias porro, eligendi deleniti rem nobis. Culpa.</p>
+            <div class="button">
+                <a class="a_button" href="#"><b>Lorem ipsum</b></a>
+                <a class="a_button" href="#"><b>Lorem ipsum</b></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="about" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col" style="padding-right: 15px; display: flex; align-items: center;">
+                    <div>
+                        <b style="font-size: 40px; color: var(--yellow); text-transform: uppercase;">Lorem ipsum dolor sit amet.</b>
+                        <b  style="font-size: 25px; display: inline-block; margin: -10;">Lorem ipsum dolor sit amet consectetur adipisicing.</b>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum facilis ut velit aut libero asperiores vel quis, corporis culpa quas, molestias tempora doloribus unde consectetur?</p>
+                    <br>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi, fugit amet est possimus ab nobis rem illo neque quasi culpa corporis earum autem placeat voluptates.</p>
+                        <br>
+                        <a class="a_button" href="#">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img style="border-radius: 20px;" src="about.webp" alt="about" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chosee" style="margin-top: 80px;">
+        <div class="container">
+            <div style="text-align: center;">
+                <b style="font-size: 30px; text-transform: uppercase;">Lorem ipsum</b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae natus dolor incidunt totam atque est commodi molestias placeat cupiditate, veniam voluptates consectetur aliquam vitae eveniet mollitia qui eos accusamus repellendus amet suscipit adipisci. Iure, quo!</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="flex_icon">
+                        <div class="border">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 25px;">
+                        <b style="font-size: 15px; text-transform: uppercase;">Lorem ipsum</b>
+                        <p style="margin-top: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flex_icon">
+                        <div class="border">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 25px;">
+                        <b style="font-size: 15px; text-transform: uppercase;">Lorem ipsum</b>
+                        <p style="margin-top: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flex_icon">
+                        <div class="border">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 25px;">
+                        <b style="font-size: 15px; text-transform: uppercase;">Lorem ipsum</b>
+                        <p style="margin-top: 15px;">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="flex_icon">
+                        <div class="border">
+                            <i class="bi bi-cup-hot-fill"></i>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 25px;">
+                        <b style="font-size: 15px; text-transform: uppercase;">Lorem ipsum</b>
+                        <p style="margin-top: 15px;">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="container">
+            <div style="text-align: center;">
+                <b style="font-size: 30px; text-transform: uppercase;">Lorem ipsum</b>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <img src="service.jpg" alt="service">
+                    <div style="margin-top: 25px;">
+                        <b style="font-size: 20px; text-transform: uppercase;">Lorem ipsum dolor sit</b>
+                        <p style="margin-top: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                        <a class="a_button" href="#" style=" display: inline-block; margin-top: 25px;">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="service.jpg" alt="service">
+                    <div style="margin-top: 25px;">
+                        <b style="font-size: 20px; text-transform: uppercase;">Lorem ipsum dolor sit</b>
+                        <p style="margin-top: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                        <a class="a_button" href="#" style=" display: inline-block; margin-top: 25px;">Lorem ipsum</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="service.jpg" alt="service">
+                    <div style="margin-top: 25px;">
+                        <b style="font-size: 20px; text-transform: uppercase;">Lorem ipsum dolor sit</b>
+                        <p style="margin-top: 15px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Esse laboriosam minima nostrum ipsum, iure ratione culpa blanditiis quaerat sit a!</p>
+                        <a class="a_button" href="#" style=" display: inline-block; margin-top: 25px;">Lorem ipsum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery" style="margin-top: 80px;">
+        <div class="container">
+            <div style="text-align: center;">
+                <b style="font-size: 30px; text-transform: uppercase;">Lorem ipsum</b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae natus dolor incidunt totam atque est commodi molestias placeat cupiditate, veniam voluptates consectetur aliquam vitae eveniet mollitia qui eos accusamus repellendus amet suscipit adipisci. Iure, quo!</p>
+            </div>
+            <div class="paginator">
+                <button class="active" onclick="view_gallery(event,'contoh1','paginate-image-1')">Lorem</button>
+                <button onclick="view_gallery(event,'contoh2','paginate-image-2')">Lorem</button>
+                <button onclick="view_gallery(event,'contoh3','paginate-image-3')">Lorem</button>
+                <button onclick="view_gallery(event,'contoh4','paginate-image-4')">Lorem</button>
+                <button onclick="view_gallery(event,'contoh5','paginate-image-5')">Lorem</button>
+            </div>
+            <div class="row paginate-image" id="paginate-image-1">
+                <div class="col">
+                    <img src="gallery.jpg" alt="gallery" style="width: 100%; height: 100%;">
+                </div>
+                <div class="col">
+                    <div class="row-2">
+                        <div class="col"><img src="gallery.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-2">
+                <div class="col">
+                    <img src="gallery2.jpg" alt="gallery" style="width: 100%; height: 100%;">
+                </div>
+                <div class="col">
+                    <div class="row-2">
+                        <div class="col"><img src="gallery2.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery2.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery2.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery2.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-3">
+                <div class="col">
+                    <img src="gallery3.jpg" alt="gallery" style="width: 100%; height: 100%;">
+                </div>
+                <div class="col">
+                    <div class="row-2">
+                        <div class="col"><img src="gallery3.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery3.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery3.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery3.jpg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-4">
+                <div class="col">
+                    <img src="gallery4.jpeg" alt="gallery" style="width: 100%; height: 100%;">
+                </div>
+                <div class="col">
+                    <div class="row-2">
+                        <div class="col"><img src="gallery4.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery4.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery4.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery4.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-5">
+                <div class="col">
+                    <img src="gallery5.jpeg" alt="gallery" style="width: 100%; height: 100%;">
+                </div>
+                <div class="col">
+                    <div class="row-2">
+                        <div class="col"><img src="gallery5.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery5.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery5.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                        <div class="col"><img src="gallery5.jpeg" alt="gallery" style="width: 100%; height: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="testimoni" style="margin-top: 80px;">
+        <div class="container">
+            <div style="text-align: center;">
+                <b style="font-size: 30px; text-transform: uppercase;">Lorem ipsum</b>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae natus dolor incidunt totam atque est commodi molestias placeat cupiditate, veniam voluptates consectetur aliquam vitae eveniet mollitia qui eos accusamus repellendus amet suscipit adipisci. Iure, quo!</p>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <i class="bi bi-quote"></i>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, enim laudantium adipisci quaerat totam sequi fuga iusto nobis harum nisi officia laboriosam dolorum quod magni odit fugiat, qui quia soluta?
+                        </div>
+                    </div>
+                    <div class="flex-profile">
+                        <div class="profile">
+                            <img src="https://th.bing.com/th/id/OIP.XqO6cETFqVBVcTHoDrdybAHaIs?pid=ImgDet&rs=1" alt="">
+                            <b>Lorem</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col prime">
+                    <div class="card">
+                        <i class="bi bi-quote"></i>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, enim laudantium adipisci quaerat totam sequi fuga iusto nobis harum nisi officia laboriosam dolorum quod magni odit fugiat, qui quia soluta?
+                        </div>
+                    </div>
+                    <div class="flex-profile">
+                        <div class="profile">
+                            <img src="https://th.bing.com/th/id/OIP.XqO6cETFqVBVcTHoDrdybAHaIs?pid=ImgDet&rs=1" alt="">
+                            <b>Lorem</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <i class="bi bi-quote"></i>
+                        <div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, enim laudantium adipisci quaerat totam sequi fuga iusto nobis harum nisi officia laboriosam dolorum quod magni odit fugiat, qui quia soluta?
+                        </div>
+                    </div>
+                    <div class="flex-profile">
+                        <div class="profile">
+                            <img src="https://th.bing.com/th/id/OIP.XqO6cETFqVBVcTHoDrdybAHaIs?pid=ImgDet&rs=1" alt="">
+                            <b>Lorem</b>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+    <div class="subscribe" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1 style="font-weight: 800;">Lorem ipsum dolor sit</h1>
+                    <h1 style="font-weight: 100; line-height: 20px;">Lorem ipsum dolor sit amet.</h1>
+                </div>
+                <div class="col">
+                    <form>
+                        <div class="input1">
+                            <input type="text" placeholder="Nama">
+                            <input type="text" placeholder="E-mail">
+                        </div>
+                        <div class="input2">
+                            <input type="text" placeholder="Message">
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4>Lorem ipsum</h4>
+                    <ul style="margin-top: 30px;">
+                        <li>
+                            <h3 style="color: var(--yellow); text-transform: uppercase; line-height: 10px;">Lorem ipsum dolor</h3>
+                            <small>Lorem ipsum dolor sit.</small>
+                        </li>
+                        <li style="margin-top: 30px;">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta consequuntur facilis, a iure pariatur consectetur?
+                        </li>
+                        <li class="icon_footer" style="margin-top: 30px; display: flex; gap: 10px;">
+                            <div class="base_icon">
+                                <i class="bi bi-facebook"></i>
+                            </div>
+                            <div class="base_icon">
+                                <i class="bi bi-twitter"></i>
+                            </div>
+                            <div class="base_icon">
+                                <i class="bi bi-youtube"></i>
+                            </div>
+                            <div class="base_icon">
+                                <i class="bi bi-google"></i>
+                            </div>
+                            <div class="base_icon">
+                                <i class="bi bi-linkedin"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Lorem ipsum</h4>
+                    <dl style="margin-top: 30px;">
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                        <li>Lorem ipsum</li>
+                    </dl>
+                </div>
+                <div class="col">
+                    <h4>Lorem ipsum</h4>
+                    <ul style="margin-top: 30px;">
+                        <li style="display: flex; align-items: center; gap: 10px;"><i class="bi bi-arrow-right-circle" style="font-size: 30px;"></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><i class="bi bi-arrow-right-circle" style="font-size: 30px;"></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><i class="bi bi-arrow-right-circle" style="font-size: 30px;"></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><i class="bi bi-arrow-right-circle" style="font-size: 30px;"></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px;"><i class="bi bi-arrow-right-circle" style="font-size: 30px;"></i>Lorem ipsum</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Lorem ipsum</h4>
+                    <ul style="margin-top: 30px;">
+                        <li style="display: flex; align-items: center; gap: 10px; padding-top: 10px;"><i class="bi bi-geo-alt-fill"></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px; padding-top: 10px;"><i class="bi bi-envelope"></i></i>Lorem ipsum</li>
+                        <li style="display: flex; align-items: center; gap: 10px; padding-top: 10px;"><i class="bi bi-phone"></i></i>1234567890</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <img src="jumbotron.jpg" alt="footer">
+    </div>
+
+    <script>
+        function view_gallery(event,section_id,paginate_image_id){
+            var paginate_image = document.querySelectorAll('.paginate-image')
+            var btn =  document.querySelectorAll('.gallery .paginator button')
+            for(let i = 0; i < btn.length; i++){
+                btn[i].classList.remove('active')
+                paginate_image[i].classList.add('display-none')
+            }
+            var clicked_btn = event.target
+            clicked_btn.classList.add('active')
+
+            document.querySelector('#'+paginate_image_id).classList.remove('display-none')
+        }
+    </script>
+
+</body>
+
+</html>

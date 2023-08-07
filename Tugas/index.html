@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tugas workshop Entercode</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        :root{
+            --grey: rgb(183, 183, 183);
+            --darkgrey: rgb(43, 43, 43);
+        }
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        html body{
+            height: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+
+        .header{
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .container{
+            padding-left: 200px;
+            padding-right: 200px;
+        }
+
+        .header ul{
+            display: flex;
+            gap: 20px;
+            color: white;
+        }
+
+        .navbar_1{
+            background-color: rgb(43, 43, 43);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar_1 .nav1_icon{
+            height: 60px;
+            width: 60px;
+        }
+
+        .navbar_1 .search input{
+            width: 400px;
+            outline: 0;
+            border: none;
+            padding: 8px;
+            border-radius: 50px;
+            margin-left: 50px;
+        }
+
+        .navbar_1 .search_icon{
+            padding: 10px 15px 10px 14px;
+            background-color: red;
+            color: white;
+            border-radius: 100%;
+            margin-left: -40px;
+        }
+
+        .profile{
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .a_button1{
+            background-color: rgb(79, 79, 79);
+            color: white;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            border-radius: 50px;
+        }
+
+        .a_button2{
+            background-color: rgb(79, 79, 79);
+            color: white;
+            padding-left: 0;
+            padding-right: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            border-radius: 50px;
+        }
+
+        #notif_icon{
+            padding: 12px 15px 12px 14px;
+            background-color: yellow;
+            color: black;
+            border-radius: 100%;
+            margin-right: 5px;
+        }
+
+        .navbar_2{
+            background-color: var(--grey);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navbar_2 ul{
+            display: flex;
+            gap: 20px;
+        }
+
+        .categories .container{
+            display: grid;
+            grid-template-columns: 15% 60% 15%;
+            padding-top: 30px;
+            gap: 50px;
+        }
+
+        .paginator{
+            height: 100%;
+            width: 100%;
+            border: 1px solid #000;
+            border-radius: 0;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .paginator button{
+            text-align: left;
+            font-size: 15px;
+        }
+        
+        button{
+            background-color: transparent;
+            border: 0;
+        }
+
+        .categories .paginator button.active{
+            background-color: var(--grey);
+        }
+
+        .categories .row{
+            height: 100%;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 80% 20%;
+            gap: 30px;
+        }
+
+        .categories .row-2{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .categories .col img{
+            height: 100%;
+            width: 700px;
+        }
+
+        .categories .col-2 img{
+            height: 100%;
+            width: 200px;
+            padding-left: 145px;
+        }
+
+        .display-none{
+            display: none !important;
+        }
+
+        .a-btn-service{
+            background-color: var(--grey);
+            color: black;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header class="header" style="background-color: black;">
+        <div class="container" style="display: flex;">
+            <ul>
+                <li><i class="bi bi-tools"></i> abc</li>
+                <li><i class="bi bi-stoplights"></i> abc</li>
+            </ul>
+            <ul style="margin-left: auto; margin-right: 0px;">
+                <li><i class="bi bi-car-front-fill"></i> Lorem</li>
+                <li><i class="bi bi-sign-railroad"></i> Lorem</li>
+            </ul>
+        </div>
+    </header>
+
+    <nav class="navbar_1">
+        <div class="container" style="display: flex; align-items: center;">
+            <div style="display: flex;">
+                <div>
+                    <img src="icon.png" alt="icon" class="nav1_icon">
+                </div>
+                <div>
+                    <div style="display: flex; gap: 10px; margin-top: 5px;">
+                        <h3 style="color: white; font-size: 25px; padding-left: 10px;">Lorem</h3>
+                        <h3 style="color: yellow; font-size: 25px;">Ipsum</h3>
+                    </div>
+                    <div style="padding-left: 10px; margin-top: -5px;">
+                        <h6 style="color: white;">Lorem ipsum dolor sit amet.</h6>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form>
+                    <div class="search" style="display: flex;">
+                        <input type="text" placeholder="Search">
+                        <div class="search_icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="profile">
+                <div>
+                    <a class="a_button1" href="#" style="margin-right: 10px;"><i class="bi bi-person"></i> 108 M</a>
+                    <a class="a_button2" href="#"><i class="bi bi-bell-fill" id="notif_icon"></i> 99+</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar_2">
+        <div class="container">
+            <ul>
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="categories">
+        <div class="container">
+            <div class="paginator">
+                <h6 style="font-size: 15px;">CATEGORIES</h6>
+                <button class="active" onclick="view_category(event,'car1','paginate-image-1')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car2','paginate-image-2')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car3','paginate-image-3')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car4','paginate-image-4')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car5','paginate-image-5')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car6','paginate-image-6')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car7','paginate-image-7')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car8','paginate-image-8')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car9','paginate-image-9')">Lorem ipsum</button>
+                <button onclick="view_category(event,'car10','paginate-image-10')">Lorem ipsum</button>
+            </div>
+            <div class="row paginate-image" id="paginate-image-1">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://th.bing.com/th/id/OIP.U5fEbLgNqC48M4Po1ZP5_QAAAA?pid=ImgDet&rs=1" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/OIP.2uQuMUS6_6z-KEO6h0JQvwHaHa?pid=ImgDet&rs=1" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.9davgSX8y0WnUtqfZAIgdwHaFj?pid=ImgDet&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-2">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://th.bing.com/th/id/OIP.utOifupDPqDg7dSVCuRuTAHaEK?pid=ImgDet&rs=1" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/OIP.EsOVeyf2vdjUAKUUarqhqQHaFj?pid=ImgDet&rs=1" alt="spark-plug">
+                        <img src="https://www.cgcreativeshop.com/wp-content/uploads/2019/03/copeblend23032019-300x233.jpg" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-3">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://th.bing.com/th/id/OIP.efflZ4HLLN9Qj0ZGalvRBgHaD5?pid=ImgDet&rs=1" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/R.c3124254f9bde62fc5392e58a984f868?rik=AvaV%2fkJ3YPfwwA&riu=http%3a%2f%2forangeauto.ae%2fwp-content%2fuploads%2fSPARK-PLUG-REPLACEMENT.jpg&ehk=%2bg3G0rMtslmADBVe0Mjrvxxpk%2bPijZpsdB2Jh5Y041U%3d&risl=&pid=ImgRaw&r=0" alt="spark-plug">
+                        <img src="https://3docean.img.customer.envatousercontent.com/files/63847041/590.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=41ed151e97acac533e1785e784b33607" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-4">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://th.bing.com/th/id/OIP.H0QJGXaeh-lb2fWVGRxQlQAAAA?pid=ImgDet&rs=1" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://parts.subaru.com/images/parts/subaru/productimages/fullsize/22401AA781%201.jpg" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.d6xPAqyz8gsNUtJKGicTSQHaHa?pid=ImgDet&w=800&h=800&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-5">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2020/09/Volvo-P1800-e1600210798222.jpg" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://milexcompleteautocare.com/Files/Images/Blog/spark-plugs.jpg" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.9davgSX8y0WnUtqfZAIgdwHaFj?pid=ImgDet&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-6">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://static2.hotcarsimages.com/wordpress/wp-content/uploads/2020/11/Dodge-Viper-Rear-Fifth-Generation.jpg" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/OIP.2uQuMUS6_6z-KEO6h0JQvwHaHa?pid=ImgDet&rs=1" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.d6xPAqyz8gsNUtJKGicTSQHaHa?pid=ImgDet&w=800&h=800&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-7">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://static1.hotcarsimages.com/wordpress/wp-content/uploads/2020/03/feature-image-stunning-hondas.jpg" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/OIP.EsOVeyf2vdjUAKUUarqhqQHaFj?pid=ImgDet&rs=1" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.d6xPAqyz8gsNUtJKGicTSQHaHa?pid=ImgDet&w=800&h=800&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-8">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://static2.hotcarsimages.com/wordpress/wp-content/uploads/2020/12/image-10.png" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://th.bing.com/th/id/R.c3124254f9bde62fc5392e58a984f868?rik=AvaV%2fkJ3YPfwwA&riu=http%3a%2f%2forangeauto.ae%2fwp-content%2fuploads%2fSPARK-PLUG-REPLACEMENT.jpg&ehk=%2bg3G0rMtslmADBVe0Mjrvxxpk%2bPijZpsdB2Jh5Y041U%3d&risl=&pid=ImgRaw&r=0" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.9davgSX8y0WnUtqfZAIgdwHaFj?pid=ImgDet&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-9">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ibRrkwzgAGLc/v5/-1x-1.jpg" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://parts.subaru.com/images/parts/subaru/productimages/fullsize/22401AA781%201.jpg" alt="spark-plug">
+                        <img src="https://www.cgcreativeshop.com/wp-content/uploads/2019/03/copeblend23032019-300x233.jpg" alt="tires">
+                    </div>
+                </div>
+            </div>
+            <div class="row paginate-image display-none" id="paginate-image-10">
+                <div class="col" style="height: 100%; width: 100%; margin-left: -5px;">
+                    <img src="https://static0.hotcarsimages.com/wordpress/wp-content/uploads/2020/11/2018-audi-tt_100616104-Cropped.jpg" alt="car">
+                </div>
+                <div class="col-2">
+                    <div class="row-2" style="height: 100%; width: 100%;">
+                        <img src="https://milexcompleteautocare.com/Files/Images/Blog/spark-plugs.jpg" alt="spark-plug">
+                        <img src="https://th.bing.com/th/id/OIP.9davgSX8y0WnUtqfZAIgdwHaFj?pid=ImgDet&rs=1" alt="tires">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service" style="padding-top: 30px;">
+        <div class="container">
+            <div class="service-options" style="display: flex; gap: 50px;">
+                <a class="a-btn-service" href="#">Lorem, ipsum dolor</a>
+                <a class="a-btn-service" href="#">Lorem, ipsum dolor</a>
+                <a class="a-btn-service" href="#">Lorem, ipsum dolor</a>
+                <a class="a-btn-service" href="#">Lorem, ipsum dolor</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function view_category(event,section_id,paginate_image_id){
+            var paginate_image = document.querySelectorAll('.paginate-image')
+            var btn =  document.querySelectorAll('.categories .paginator button')
+            for(let i = 0; i < btn.length; i++){
+                btn[i].classList.remove('active')
+                paginate_image[i].classList.add('display-none')
+            }
+            var clicked_btn = event.target
+            clicked_btn.classList.add('active')
+
+            document.querySelector('#'+paginate_image_id).classList.remove('display-none')
+        }
+    </script>
+</body>
+</html>
